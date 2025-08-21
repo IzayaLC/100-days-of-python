@@ -12,7 +12,11 @@ print(choices[computer_choice])
 
 if users_choice == computer_choice:
     print('Draw')
+elif users_choice == 0 and computer_choice == 1:
+    print('You Lose!')
 elif users_choice == 0 and computer_choice == 2:
+    print('You Win!')
+elif users_choice == 1 and computer_choice == 0:
     print('You Win!')
 elif users_choice == 1 and computer_choice == 2:
     print('You Lose!')
