@@ -2,7 +2,7 @@ This is Day 5 of my 100 Days of Python challenge.
 
 
 
-Today I:
+Today:
 
 
 
