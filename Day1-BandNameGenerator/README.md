@@ -1,6 +1,6 @@
 This is Day 1 of my 100 Days of Python challenge.
 
-Today I:
+Today:
 
     - Output to the terminal with the print() function
     - Collected user input with the input() function

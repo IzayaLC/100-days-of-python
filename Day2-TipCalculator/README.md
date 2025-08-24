@@ -2,7 +2,8 @@ This is Day 2 of my 100 Days of Python challenge.
 
 
 
-Today I:
+Today:
+
 
 
 * Learned about different python operators (+, - ,\* , \*\*, /, //)
