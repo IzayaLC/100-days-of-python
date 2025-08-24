@@ -1,4 +1,4 @@
-This is Day 4 of my 100 Days of Python challenge.
+This is Day 4 of my 100 Days of Python Challenge.
 
 
 
