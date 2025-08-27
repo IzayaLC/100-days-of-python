@@ -1,16 +1,25 @@
 import random
-#-1 Generate a random word from a word bank 
+#-1 Generate a random word from a word bank
+game = 1
+
 word_list = ['bear', 'dog', 'cat', 'fish', 'bird', 'turtle']
 hangman_word = random.choice(word_list)
+displayed_word = []
 
+for letter in hangman_word:
+    displayed_word.append('_')
+
+print(displayed_word)
 print(hangman_word)
 
-user_guess = input('Enter a letter: ')
-for letter in hangman_word:
-    if user_guess == letter:
-        print("Correct")
-    else:
-        print("Wrong")
+while game == 1:
+    user_guess = input('Enter a letter: ')
+    for index, letter in enumerate(hangman_word):
+        if user_guess == letter:
+            displayed_word[index] = hangman_word[index]
+        
+        print(''.join(displayed_word))
+    
 
 #-1 Display a number of blank spaces '_' equal to the number of letters in the chosen word
 
