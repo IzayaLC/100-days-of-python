@@ -13,12 +13,12 @@ print(displayed_word)
 print(hangman_word)
 
 while game == 1:
-    user_guess = input('Enter a letter: ')
+    user_guess = input('Enter a letter: ').lower()
     for index, letter in enumerate(hangman_word):
         if user_guess == letter:
             displayed_word[index] = hangman_word[index]
         
-        print(''.join(displayed_word))
+    print(''.join(displayed_word))
     
 
 #-1 Display a number of blank spaces '_' equal to the number of letters in the chosen word
