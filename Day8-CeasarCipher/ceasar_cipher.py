@@ -54,6 +54,19 @@ def decryption(ciphertext, key=3):
     plaintext = "".join(decrypted_characters)
     return plaintext
 
+
+print(r"""
+  _____                              _____  _       _               
+ / ____|                            / ____|(_)     (_)              
+| |     __ _  ___  ___  __ _ _ __  | |     _ _ __   _ ___ ___  ___ 
+| |    / _` |/ _ \/ __|/ _` | '__| | |    | | '_ \ | / __/ __|/ _ \
+| |___| (_| |  __/\__ \ (_| | |    | |____| | |_) || \__ \__ \  __/
+ \_____\__,_|\___||___/\__,_|_|     \_____|_| .__/ |_ |___/___/\___|
+                                            | |   _/ |              
+                                            |_|  |__/               
+""")
+
+
 print("Welcome to the Ceasar Cipher!")
 decision = input("Type 'e' to encrypt, type 'd' to decrypt: ")
 
