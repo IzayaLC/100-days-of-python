@@ -1,39 +1,71 @@
-#The user will if they want to encrypt or decrypt
-#-create a encrypt and decrypt function
 
-def encryption(plaintext, key):
+alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l","m",
+            "n","o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+def encryption(plaintext, key=3):
     encrypted_characters = []
     for character in plaintext:
+        if character.lower() not in alphabet:
+            encrypted_characters.append(character)
+            continue
+         
+        if character.isupper():
+            character = character.lower()
+            
+            character_index = alphabet.index(character)
+            encrypted_index = (character_index + key) % 26
         
-        character_index = alphabet.index(character)
-        encrypted_index = (character_index + key) % 26
+            cipher_character = alphabet[encrypted_index].upper()
+            encrypted_characters.append(cipher_character)
+        else:
+            character_index = alphabet.index(character)
+            encrypted_index = (character_index + key) % 26
         
-        cipher_character = alphabet[encrypted_index]
-        encrypted_characters.append(cipher_character)
+            cipher_character = alphabet[encrypted_index]
+            encrypted_characters.append(cipher_character)
+            
+            
         
     ciphertext = "".join(encrypted_characters)
     return ciphertext
 
-def decryption(ciphertext, key):
+def decryption(ciphertext, key=3):
     decrypted_characters = []
     for character in ciphertext:
+        if character.lower() not in alphabet:
+            decrypted_characters.append(character)
+            continue
         
-        encrypted_index = alphabet.index(character)
-        decrypted_index = (encrypted_index - key) % 26
+        if character.isupper():
+            character = character.lower()
+            
+            character_index = alphabet.index(character)
+            decrypted_index = (character_index - key) % 26
         
-        plaintext_char = alphabet[decrypted_index] 
-        decrypted_characters.append(plaintext_char)
+            cipher_character = alphabet[decrypted_index].upper()
+            decrypted_characters.append(cipher_character)
+        else:
+            character_index = alphabet.index(character)
+            decrypted_index = (character_index - key) % 26
+        
+            cipher_character = alphabet[decrypted_index]
+            decrypted_characters.append(cipher_character)
         
     plaintext = "".join(decrypted_characters)
     return plaintext
-
-#THe user will enter the word they wish to encrypt or decrypt
-
-alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l","m",
-            "n","o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 print("Welcome to the Ceasar Cipher!")
 decision = input("Type 'e' to encrypt, type 'd' to decrypt: ")
 
 if decision == "e":
-    print(encryption("day", 3))
+    text = input("Type your message: ")
+    shift_number = int(input("Type the shift number: "))
+    ciphertext = encryption(text, shift_number)
+    
+    print(f"Ciphertext generated:\"{ciphertext}\" ")
+elif decision == "d":
+    text = input ("Type your message: ")
+    shift_number = int(input("Type the shift number: "))
+    plaintext = decryption(text, shift_number)
+    
+    print(f"Plaintext generated:\"{plaintext}\"")
